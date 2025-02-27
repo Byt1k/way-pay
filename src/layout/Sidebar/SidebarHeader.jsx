@@ -4,8 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useGlobalStateContext } from '@/context/GolobalStateProvider';
 //Images
-import logo from '@/assets/img/brand-sm.svg';
-import jampackImg from '@/assets/img/Jampack.svg';
+import logo from '@/assets/img/wayPay/logo.svg';
 
 
 const SidebarHeader = () => {
@@ -20,7 +19,7 @@ const SidebarHeader = () => {
             <span>
                 <Link className="navbar-brand" href="/">
                     <Image className="brand-img img-fluid" src={logo} alt="brand" />
-                    <Image className="brand-img img-fluid" src={jampackImg} alt="brand" />
+                    WayPay
                 </Link>
                 <Button variant="flush-dark" onClick={toggleSidebar} className="btn-icon btn-rounded flush-soft-hover navbar-toggle">
                     <span className="icon">

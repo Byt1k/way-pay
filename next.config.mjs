@@ -13,6 +13,7 @@ const nextConfig = {
         quietDeps: true, // Suppresses warnings from dependencies
         api: 'modern-compiler',
 
+
     },
 };
 
