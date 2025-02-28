@@ -42,7 +42,7 @@ export default class Gantt {
         } else {
             throw new TypeError(
                 'Frappé Gantt only supports usage of a string CSS selector,' +
-                    " HTML DOM element or SVG DOM element for the 'element' parameter"
+                    " HTML DOM element or SVG DOM element for the 'element' parameter",
             );
         }
 
@@ -256,7 +256,7 @@ export default class Gantt {
                     cur_date = date_utils.add(
                         cur_date,
                         this.options.step,
-                        'hour'
+                        'hour',
                     );
                 }
             }
@@ -486,12 +486,12 @@ export default class Gantt {
             'Quarter Day_lower': date_utils.format(
                 date,
                 'HH',
-                this.options.language
+                this.options.language,
             ),
             'Half Day_lower': date_utils.format(
                 date,
                 'HH',
-                this.options.language
+                this.options.language,
             ),
             Day_lower:
                 date.getDate() !== last_date.getDate()
@@ -513,7 +513,7 @@ export default class Gantt {
                         ? date_utils.format(
                               date,
                               'D MMM',
-                              this.options.language
+                              this.options.language,
                           )
                         : date_utils.format(date, 'D', this.options.language)
                     : '',
@@ -585,7 +585,7 @@ export default class Gantt {
                     const arrow = new Arrow(
                         this,
                         this.bars[dependency._index], // from_task
-                        this.bars[task._index] // to_task
+                        this.bars[task._index], // to_task
                     );
                     this.layers.arrow.appendChild(arrow.element);
                     return arrow;
@@ -623,7 +623,7 @@ export default class Gantt {
         const hours_before_first_task = date_utils.diff(
             this.get_oldest_starting_date(),
             this.gantt_start,
-            'hour'
+            'hour',
         );
 
         const scroll_pos =
@@ -642,7 +642,7 @@ export default class Gantt {
             () => {
                 this.unselect_all();
                 this.hide_popup();
-            }
+            },
         );
     }
 
@@ -884,7 +884,7 @@ export default class Gantt {
         if (!this.popup) {
             this.popup = new Popup(
                 this.popup_wrapper,
-                this.options.custom_popup_html
+                this.options.custom_popup_html,
             );
         }
         this.popup.show(options);
@@ -910,7 +910,7 @@ export default class Gantt {
         return this.tasks
             .map((task) => task._start)
             .reduce((prev_date, cur_date) =>
-                cur_date <= prev_date ? cur_date : prev_date
+                cur_date <= prev_date ? cur_date : prev_date,
             );
     }
 

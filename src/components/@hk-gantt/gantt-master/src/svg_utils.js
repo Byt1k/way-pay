@@ -38,7 +38,7 @@ function getAnimationElement(
     from,
     to,
     dur = '0.4s',
-    begin = '0.1s'
+    begin = '0.1s',
 ) {
     const animEl = svgElement.querySelector('animate');
     if (animEl) {

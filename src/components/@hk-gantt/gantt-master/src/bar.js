@@ -202,12 +202,12 @@ export default class Bar {
         const start_date = date_utils.format(
             this.task._start,
             'MMM D',
-            this.gantt.options.language
+            this.gantt.options.language,
         );
         const end_date = date_utils.format(
             date_utils.add(this.task._end, -1, 'second'),
             'MMM D',
-            this.gantt.options.language
+            this.gantt.options.language,
         );
         const subtitle = start_date + ' - ' + end_date;
 
@@ -285,13 +285,13 @@ export default class Bar {
         const new_start_date = date_utils.add(
             this.gantt.gantt_start,
             x_in_units * this.gantt.options.step,
-            'hour'
+            'hour',
         );
         const width_in_units = bar.getWidth() / this.gantt.options.column_width;
         const new_end_date = date_utils.add(
             new_start_date,
             width_in_units * this.gantt.options.step,
-            'hour'
+            'hour',
         );
 
         return { new_start_date, new_end_date };
@@ -372,7 +372,7 @@ export default class Bar {
         this.$bar_progress.setAttribute('x', this.$bar.getX());
         this.$bar_progress.setAttribute(
             'width',
-            this.$bar.getWidth() * (this.task.progress / 100)
+            this.$bar.getWidth() * (this.task.progress / 100),
         );
     }
 

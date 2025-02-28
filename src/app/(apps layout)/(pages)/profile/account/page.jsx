@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
-import { Button, Card, Col, Container, Dropdown, Form, InputGroup, Nav, Row, Tab } from 'react-bootstrap';
-import { Edit2, Edit3, Minimize, Plus, Trash2 } from 'react-feather';
+import {Button, Card, Col, Container, Dropdown, Form, InputGroup, Nav, Row, Tab} from 'react-bootstrap';
+import {Edit2, Edit3, Minimize, Plus, Trash2} from 'react-feather';
 import HkTooltip from '@/components/@hk-tooltip/HkTooltip';
 import HkBadge from '@/components/@hk-badge/@hk-badge';
 
@@ -28,17 +28,18 @@ import symbolAvatar19 from '@/assets/img/symbol-avatar-19.png';
 import visaCard from '@/assets/img/card-visa.png';
 import masterCard from '@/assets/img/mastercard.png';
 
-const Account = ({ toggleCollapsedNav }) => {
+const Account = () => {
 
     return (
         <Container>
-            <Tab.Container defaultActiveKey="tabBlock1" >
+            <Tab.Container defaultActiveKey="tabBlock1">
                 {/* Page Header */}
                 <div className="hk-pg-header pg-header-wth-tab pt-7">
                     <div className="d-flex">
                         <div className="flex-1">
                             <h1 className="pg-title">Account Settings</h1>
-                            <p className="p-lg col-lg-8">Manage your account settings and options. You can customize interests, add social media links, edit integrations for beter inapp experience.</p>
+                            <p className="p-lg col-lg-8">Manage your account settings and options. You can customize
+                                interests, add social media links, edit integrations for beter inapp experience.</p>
                         </div>
                     </div>
                     <Nav variant="tabs" className="nav-line nav-light">
@@ -57,8 +58,8 @@ const Account = ({ toggleCollapsedNav }) => {
                                 <span className="nav-link-text">Integrations</span>
                             </Nav.Link>
                         </Nav.Item>
-                        <Nav.Item as={Dropdown} >
-                            <Dropdown.Toggle as={Nav.Link} >Billing Info</Dropdown.Toggle>
+                        <Nav.Item as={Dropdown}>
+                            <Dropdown.Toggle as={Nav.Link}>Billing Info</Dropdown.Toggle>
                             <Dropdown.Menu>
                                 <Dropdown.Item eventKey="tabBlock4">Saved Cards</Dropdown.Item>
                                 <Dropdown.Item eventKey="tabBlock5">My Addresses</Dropdown.Item>
@@ -74,112 +75,137 @@ const Account = ({ toggleCollapsedNav }) => {
                             <Row>
                                 <Col xl={8}>
                                     <div className="title-lg fs-5"><span>Customize Interests</span></div>
-                                    <p className="mb-4">Customizing interests will help you get the personalised experience.</p>
+                                    <p className="mb-4">Customizing interests will help you get the personalised
+                                        experience.</p>
                                     <Row className="gx-2 filter-block-wrap mt-5">
                                         <Col xs={6} sm={3}>
                                             <Card className="text-white filter-block h-120p mb-2">
-                                                <Form.Check.Input type="checkbox" />
-                                                <Image src={interest1} className="card-img h-100 img-fluid" alt="img-desc" />
-                                                <div className="card-img-overlay bg-opacity-75 d-flex align-items-center justify-content-center">
+                                                <Form.Check.Input type="checkbox"/>
+                                                <Image src={interest1} className="card-img h-100 img-fluid"
+                                                       alt="img-desc"/>
+                                                <div
+                                                    className="card-img-overlay bg-opacity-75 d-flex align-items-center justify-content-center">
                                                     <h5 className="card-title text-white">Infrastructure</h5>
                                                 </div>
                                             </Card>
                                         </Col>
                                         <Col xs={6} sm={3}>
                                             <Card className="card text-white filter-block h-120p mb-2">
-                                                <Form.Check.Input type="checkbox" defaultChecked />
-                                                <Image src={interest2} className="card-img h-100 img-fluid" alt="img-desc" />
-                                                <div className="card-img-overlay bg-opacity-75 d-flex align-items-center justify-content-center">
+                                                <Form.Check.Input type="checkbox" defaultChecked/>
+                                                <Image src={interest2} className="card-img h-100 img-fluid"
+                                                       alt="img-desc"/>
+                                                <div
+                                                    className="card-img-overlay bg-opacity-75 d-flex align-items-center justify-content-center">
                                                     <h5 className="card-title text-white">Science</h5>
                                                 </div>
                                             </Card>
                                         </Col>
                                         <Col xs={6} sm={3}>
                                             <Card className="card text-white filter-block h-120p mb-2">
-                                                <Form.Check.Input type="checkbox" />
-                                                <Image src={interest3} className="card-img h-100 img-fluid" alt="img-desc" />
-                                                <div className="card-img-overlay bg-opacity-75 d-flex align-items-center justify-content-center">
+                                                <Form.Check.Input type="checkbox"/>
+                                                <Image src={interest3} className="card-img h-100 img-fluid"
+                                                       alt="img-desc"/>
+                                                <div
+                                                    className="card-img-overlay bg-opacity-75 d-flex align-items-center justify-content-center">
                                                     <h5 className="card-title text-white">World Politics</h5>
                                                 </div>
                                             </Card>
                                         </Col>
                                         <Col xs={6} sm={3}>
                                             <Card className="card text-white filter-block h-120p mb-2">
-                                                <Form.Check.Input type="checkbox" />
-                                                <Image src={interest4} className="card-img h-100 img-fluid" alt="img-desc" />
-                                                <div className="card-img-overlay bg-opacity-75 d-flex align-items-center justify-content-center">
+                                                <Form.Check.Input type="checkbox"/>
+                                                <Image src={interest4} className="card-img h-100 img-fluid"
+                                                       alt="img-desc"/>
+                                                <div
+                                                    className="card-img-overlay bg-opacity-75 d-flex align-items-center justify-content-center">
                                                     <h5 className="card-title text-white">Technology</h5>
                                                 </div>
                                             </Card>
                                         </Col>
                                         <Col xs={6} sm={3}>
                                             <Card className="card text-white filter-block h-120p mb-2">
-                                                <Form.Check.Input type="checkbox" />
-                                                <Image src={interest5} className="card-img h-100 img-fluid" alt="img-desc" />
-                                                <div className="card-img-overlay bg-opacity-75 d-flex align-items-center justify-content-center">
+                                                <Form.Check.Input type="checkbox"/>
+                                                <Image src={interest5} className="card-img h-100 img-fluid"
+                                                       alt="img-desc"/>
+                                                <div
+                                                    className="card-img-overlay bg-opacity-75 d-flex align-items-center justify-content-center">
                                                     <h5 className="card-title text-white">Travel</h5>
                                                 </div>
                                             </Card>
                                         </Col>
                                         <Col xs={6} sm={3}>
                                             <Card className="card text-white filter-block h-120p mb-2">
-                                                <Form.Check.Input type="checkbox" defaultChecked />
-                                                <Image src={interest6} className="card-img h-100 img-fluid" alt="img-desc" />
-                                                <div className="card-img-overlay bg-opacity-75 d-flex align-items-center justify-content-center">
+                                                <Form.Check.Input type="checkbox" defaultChecked/>
+                                                <Image src={interest6} className="card-img h-100 img-fluid"
+                                                       alt="img-desc"/>
+                                                <div
+                                                    className="card-img-overlay bg-opacity-75 d-flex align-items-center justify-content-center">
                                                     <h5 className="card-title text-white">Literature</h5>
                                                 </div>
                                             </Card>
                                         </Col>
                                         <Col xs={6} sm={3}>
                                             <Card className="card text-white filter-block h-120p mb-2">
-                                                <Form.Check.Input type="checkbox" defaultChecked />
-                                                <Image src={interest7} className="card-img h-100 img-fluid" alt="img-desc" />
-                                                <div className="card-img-overlay bg-opacity-75 d-flex align-items-center justify-content-center">
+                                                <Form.Check.Input type="checkbox" defaultChecked/>
+                                                <Image src={interest7} className="card-img h-100 img-fluid"
+                                                       alt="img-desc"/>
+                                                <div
+                                                    className="card-img-overlay bg-opacity-75 d-flex align-items-center justify-content-center">
                                                     <h5 className="card-title text-white">Healthcare</h5>
                                                 </div>
                                             </Card>
                                         </Col>
                                         <Col xs={6} sm={3}>
                                             <Card className="card text-white filter-block h-120p mb-2">
-                                                <Form.Check.Input type="checkbox" />
-                                                <Image src={interest8} className="card-img h-100 img-fluid" alt="img-desc" />
-                                                <div className="card-img-overlay bg-opacity-75 d-flex align-items-center justify-content-center">
+                                                <Form.Check.Input type="checkbox"/>
+                                                <Image src={interest8} className="card-img h-100 img-fluid"
+                                                       alt="img-desc"/>
+                                                <div
+                                                    className="card-img-overlay bg-opacity-75 d-flex align-items-center justify-content-center">
                                                     <h5 className="card-title text-white">Marketing</h5>
                                                 </div>
                                             </Card>
                                         </Col>
                                         <Col xs={6} sm={3}>
                                             <Card className="card text-white filter-block h-120p mb-2">
-                                                <Form.Check.Input type="checkbox" />
-                                                <Image src={interest9} className="card-img h-100 img-fluid" alt="img-desc" />
-                                                <div className="card-img-overlay bg-opacity-75 d-flex align-items-center justify-content-center">
+                                                <Form.Check.Input type="checkbox"/>
+                                                <Image src={interest9} className="card-img h-100 img-fluid"
+                                                       alt="img-desc"/>
+                                                <div
+                                                    className="card-img-overlay bg-opacity-75 d-flex align-items-center justify-content-center">
                                                     <h5 className="card-title text-white">Music</h5>
                                                 </div>
                                             </Card>
                                         </Col>
                                         <Col xs={6} sm={3}>
                                             <Card className="card text-white filter-block h-120p mb-2">
-                                                <Form.Check.Input type="checkbox" defaultChecked />
-                                                <Image src={interest10} className="card-img h-100 img-fluid" alt="img-desc" />
-                                                <div className="card-img-overlay bg-opacity-75 d-flex align-items-center justify-content-center">
+                                                <Form.Check.Input type="checkbox" defaultChecked/>
+                                                <Image src={interest10} className="card-img h-100 img-fluid"
+                                                       alt="img-desc"/>
+                                                <div
+                                                    className="card-img-overlay bg-opacity-75 d-flex align-items-center justify-content-center">
                                                     <h5 className="card-title text-white">Spirituality</h5>
                                                 </div>
                                             </Card>
                                         </Col>
                                         <Col xs={6} sm={3}>
                                             <Card className="card text-white filter-block h-120p mb-2">
-                                                <Form.Check.Input type="checkbox" defaultChecked />
-                                                <Image src={interest11} className="card-img h-100 img-fluid" alt="img-desc" />
-                                                <div className="card-img-overlay bg-opacity-75 d-flex align-items-center justify-content-center">
+                                                <Form.Check.Input type="checkbox" defaultChecked/>
+                                                <Image src={interest11} className="card-img h-100 img-fluid"
+                                                       alt="img-desc"/>
+                                                <div
+                                                    className="card-img-overlay bg-opacity-75 d-flex align-items-center justify-content-center">
                                                     <h5 className="card-title text-white">Lifestyle</h5>
                                                 </div>
                                             </Card>
                                         </Col>
                                         <Col xs={6} sm={3}>
                                             <Card className="card text-white filter-block h-120p mb-2">
-                                                <Form.Check.Input type="checkbox" />
-                                                <Image src={interest12} className="card-img h-100 img-fluid" alt="img-desc" />
-                                                <div className="card-img-overlay bg-opacity-75 d-flex align-items-center justify-content-center">
+                                                <Form.Check.Input type="checkbox"/>
+                                                <Image src={interest12} className="card-img h-100 img-fluid"
+                                                       alt="img-desc"/>
+                                                <div
+                                                    className="card-img-overlay bg-opacity-75 d-flex align-items-center justify-content-center">
                                                     <h5 className="card-title text-white">Adventure</h5>
                                                 </div>
                                             </Card>
@@ -201,21 +227,22 @@ const Account = ({ toggleCollapsedNav }) => {
                                     </div>
                                     <p className="mb-4">Connect your social media accounts for one-click sharing.</p>
                                     <Form>
-                                        <Form.Group className="mb-3" >
+                                        <Form.Group className="mb-3">
                                             <Form.Label>Facebook</Form.Label>
                                             <InputGroup>
                                                 <span className="input-affix-wrapper">
                                                     <span className="input-prefix">
                                                         <span className="avatar avatar-logo avatar-xs">
                                                             <span className="initial-wrap">
-                                                                <Image src={symbolAvatar17} alt="logo" />
+                                                                <Image src={symbolAvatar17} alt="logo"/>
                                                             </span>
                                                         </span>
                                                     </span>
-                                                    <Form.Control type="text" size="lg" className="ps-8" placeholder="Username" defaultValue="Hencework" />
+                                                    <Form.Control type="text" size="lg" className="ps-8"
+                                                                  placeholder="Username" defaultValue="Hencework"/>
                                                     <a href="#" className="input-suffix text-muted">
                                                         <span className="feather-icon">
-                                                            <Edit3 />
+                                                            <Edit3/>
                                                         </span>
                                                     </a>
                                                 </span>
@@ -231,14 +258,15 @@ const Account = ({ toggleCollapsedNav }) => {
                                                     <span className="input-prefix">
                                                         <span className="avatar avatar-logo avatar-xs">
                                                             <span className="initial-wrap">
-                                                                <Image src={symbolAvatar18} alt="logo" />
+                                                                <Image src={symbolAvatar18} alt="logo"/>
                                                             </span>
                                                         </span>
                                                     </span>
-                                                    <Form.Control size="lg" type="text" className="ps-8" placeholder="Username" />
+                                                    <Form.Control size="lg" type="text" className="ps-8"
+                                                                  placeholder="Username"/>
                                                     <a href="#" className="input-suffix text-muted">
                                                         <span className="feather-icon">
-                                                            <Edit3 />
+                                                            <Edit3/>
                                                         </span>
                                                     </a>
                                                 </span>
@@ -254,19 +282,21 @@ const Account = ({ toggleCollapsedNav }) => {
                                                     <span className="input-prefix">
                                                         <span className="avatar avatar-logo avatar-xs">
                                                             <span className="initial-wrap">
-                                                                <Image src={symbolAvatar19} alt="logo" />
+                                                                <Image src={symbolAvatar19} alt="logo"/>
                                                             </span>
                                                         </span>
                                                     </span>
-                                                    <Form.Control type="text" className="form-control-lg ps-8" placeholder="Username" />
+                                                    <Form.Control type="text" className="form-control-lg ps-8"
+                                                                  placeholder="Username"/>
                                                     <a href="#" className="input-suffix text-muted">
                                                         <span className="feather-icon">
-                                                            <Edit3 />
+                                                            <Edit3/>
                                                         </span>
                                                     </a>
                                                 </span>
                                             </InputGroup>
-                                            <Form.Check type="checkbox" label="This is a company account" id="customCheck1" className="form-check-sm mt-2" />
+                                            <Form.Check type="checkbox" label="This is a company account"
+                                                        id="customCheck1" className="form-check-sm mt-2"/>
                                         </Form.Group>
                                         <Form.Group className="mb-3">
                                             <Form.Label>Connect</Form.Label>
@@ -275,11 +305,12 @@ const Account = ({ toggleCollapsedNav }) => {
                                                     <span className="input-prefix">
                                                         <span className="avatar avatar-logo avatar-xs">
                                                             <span className="initial-wrap">
-                                                                <Image src={symbolAvatar6} alt="logo" />
+                                                                <Image src={symbolAvatar6} alt="logo"/>
                                                             </span>
                                                         </span>
                                                     </span>
-                                                    <Form.Control size="lg" type="text" className="ps-8 pe-15" placeholder="Behance" />
+                                                    <Form.Control size="lg" type="text" className="ps-8 pe-15"
+                                                                  placeholder="Behance"/>
                                                     <span className="input-suffix">
                                                         <Button variant="outline-primary" size="sm">
                                                             connect
@@ -292,11 +323,12 @@ const Account = ({ toggleCollapsedNav }) => {
                                                     <span className="input-prefix">
                                                         <span className="avatar avatar-logo avatar-xs">
                                                             <span className="initial-wrap">
-                                                                <Image src={symbolAvatar5} alt="logo" />
+                                                                <Image src={symbolAvatar5} alt="logo"/>
                                                             </span>
                                                         </span>
                                                     </span>
-                                                    <Form.Control size="lg" type="text" className="ps-8 pe-15" placeholder="Dribbble" />
+                                                    <Form.Control size="lg" type="text" className="ps-8 pe-15"
+                                                                  placeholder="Dribbble"/>
                                                     <span className="input-suffix">
                                                         <Button variant="outline-primary" size="sm">
                                                             connect
@@ -329,7 +361,8 @@ const Account = ({ toggleCollapsedNav }) => {
                                                 <div className="media align-items-center">
                                                     <div className="media-head me-3">
                                                         <div className="avatar">
-                                                            <Image src={symbolAvatar6} alt="user" className="avatar-img" />
+                                                            <Image src={symbolAvatar6} alt="user"
+                                                                   className="avatar-img"/>
                                                         </div>
                                                     </div>
                                                     <div className="media-body">
@@ -347,7 +380,8 @@ const Account = ({ toggleCollapsedNav }) => {
                                                 <div className="media align-items-center">
                                                     <div className="media-head me-3">
                                                         <div className="avatar">
-                                                            <Image src={symbolAvatar5} alt="user" className="avatar-img" />
+                                                            <Image src={symbolAvatar5} alt="user"
+                                                                   className="avatar-img"/>
                                                         </div>
                                                     </div>
                                                     <div className="media-body">
@@ -365,7 +399,8 @@ const Account = ({ toggleCollapsedNav }) => {
                                                 <div className="media align-items-center">
                                                     <div className="media-head me-3">
                                                         <div className="avatar">
-                                                            <Image src={symbolAvatar14} alt="user" className="avatar-img" />
+                                                            <Image src={symbolAvatar14} alt="user"
+                                                                   className="avatar-img"/>
                                                         </div>
                                                     </div>
                                                     <div className="media-body">
@@ -383,7 +418,8 @@ const Account = ({ toggleCollapsedNav }) => {
                                                 <div className="media align-items-center">
                                                     <div className="media-head me-3">
                                                         <div className="avatar">
-                                                            <Image src={symbolAvatar16} alt="user" className="avatar-img" />
+                                                            <Image src={symbolAvatar16} alt="user"
+                                                                   className="avatar-img"/>
                                                         </div>
                                                     </div>
                                                     <div className="media-body">
@@ -419,12 +455,13 @@ const Account = ({ toggleCollapsedNav }) => {
                                             <div className="d-flex align-items-center justify-content-between">
                                                 <div className="media align-items-center">
                                                     <div className="media-head me-5">
-                                                        <Image src={visaCard} alt="user" className="img-fluid" />
+                                                        <Image src={visaCard} alt="user" className="img-fluid"/>
                                                     </div>
                                                     <div className="media-body">
                                                         <div>
                                                             <span className="text-dark fw-medium">****4213</span>
-                                                            <HkBadge bg="primary" soft className="rounded-0 ms-3">Primary</HkBadge>
+                                                            <HkBadge bg="primary" soft
+                                                                     className="rounded-0 ms-3">Primary</HkBadge>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -443,7 +480,7 @@ const Account = ({ toggleCollapsedNav }) => {
                                             <div className="d-flex align-items-center justify-content-between">
                                                 <div className="media align-items-center">
                                                     <div className="media-head me-5">
-                                                        <Image src={masterCard} alt="user" className="img-fluid" />
+                                                        <Image src={masterCard} alt="user" className="img-fluid"/>
                                                     </div>
                                                     <div className="media-body">
                                                         <div>
@@ -476,29 +513,32 @@ const Account = ({ toggleCollapsedNav }) => {
                                 <Col lg={8}>
                                     <div className="title-lg fs-5"><span>My Addresses</span></div>
                                     <Row className="gx-3">
-                                        <Col md={4} >
+                                        <Col md={4}>
                                             <Card className="card-border mnh-250p">
                                                 <Card.Body>
                                                     <div className="card-action-wrap">
-                                                        <Button size="sm" variant="flush-danger" className="btn-icon btn-rounded flush-soft-hover card-close" value={true} >
+                                                        <Button size="sm" variant="flush-danger"
+                                                                className="btn-icon btn-rounded flush-soft-hover card-close"
+                                                                value={true}>
                                                             <span className="icon">
                                                                 <span className="feather-icon">
-                                                                    <Trash2 />
+                                                                    <Trash2/>
                                                                 </span>
                                                                 <span className="feather-icon d-none">
-                                                                    <Minimize />
+                                                                    <Minimize/>
                                                                 </span>
                                                             </span>
                                                         </Button>
-                                                        <Button variant="flush-dark" size="sm" className="btn-icon btn-rounded flush-soft-hover">
+                                                        <Button variant="flush-dark" size="sm"
+                                                                className="btn-icon btn-rounded flush-soft-hover">
                                                             <span className="icon">
                                                                 <span className="feather-icon">
-                                                                    <Edit2 />
+                                                                    <Edit2/>
                                                                 </span>
                                                             </span>
                                                         </Button>
                                                     </div>
-                                                    <i className="bi bi-house-door-fill fs-3 d-block mb-1 text-primary" />
+                                                    <i className="bi bi-house-door-fill fs-3 d-block mb-1 text-primary"/>
                                                     <h5>Home</h5>
                                                     <Card.Text>3421 Central Ave NE, Albuquerque, New York - 87106
                                                     </Card.Text>
@@ -510,25 +550,27 @@ const Account = ({ toggleCollapsedNav }) => {
                                             <Card className="card-border mnh-250p">
                                                 <Card.Body>
                                                     <div className="card-action-wrap">
-                                                        <Button variant="flush-danger" size="sm" className="btn-icon btn-rounded flush-soft-hover card-close">
+                                                        <Button variant="flush-danger" size="sm"
+                                                                className="btn-icon btn-rounded flush-soft-hover card-close">
                                                             <span className="icon">
                                                                 <span className="feather-icon">
-                                                                    <Trash2 />
+                                                                    <Trash2/>
                                                                 </span>
                                                                 <span className="feather-icon d-none">
-                                                                    <Minimize />
+                                                                    <Minimize/>
                                                                 </span>
                                                             </span>
                                                         </Button>
-                                                        <Button variant="flush-dark" className="btn-icon btn-rounded flush-soft-hover">
+                                                        <Button variant="flush-dark"
+                                                                className="btn-icon btn-rounded flush-soft-hover">
                                                             <span className="icon">
                                                                 <span className="feather-icon">
-                                                                    <Edit2 />
+                                                                    <Edit2/>
                                                                 </span>
                                                             </span>
                                                         </Button>
                                                     </div>
-                                                    <i className="bi bi-shield-fill-check fs-3 d-block mb-1 text-primary" />
+                                                    <i className="bi bi-shield-fill-check fs-3 d-block mb-1 text-primary"/>
                                                     <h5>Office</h5>
                                                     <Card.Text>2035 7th St, Clanton, Alaska, 35045</Card.Text>
                                                 </Card.Body>
@@ -537,11 +579,13 @@ const Account = ({ toggleCollapsedNav }) => {
                                         <Col md={4}>
                                             <Card className="card-border border-dashed mnh-250p">
                                                 <Card.Body className="d-flex align-items-center justify-content-center">
-                                                    <Button variant="outline-light" className="btn-block" data-bs-toggle="modal" data-bs-target="#add_new_board">
-                                                        <HkTooltip title="Add New Address" placement="top" id="addresstlt1" >
+                                                    <Button variant="outline-light" className="btn-block"
+                                                            data-bs-toggle="modal" data-bs-target="#add_new_board">
+                                                        <HkTooltip title="Add New Address" placement="top"
+                                                                   id="addresstlt1">
                                                             <span className="icon">
                                                                 <span className="feather-icon">
-                                                                    <Plus />
+                                                                    <Plus/>
                                                                 </span>
                                                             </span>
                                                         </HkTooltip>
