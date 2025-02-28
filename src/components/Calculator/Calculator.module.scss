@@ -1,0 +1,44 @@
+.calculator {
+  padding: 30px 20px;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 0;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.35);
+  padding: 10px 0;
+}
+
+.container {
+  display: flex;
+  gap: 150px;
+  padding: 20px 0;
+}
+
+h3.subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 0;
+}
+
+.calculatorWrapper {
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1 1 30%;
+  min-width: 300px;
+}
+
+.resultInfoWrapper {
+  flex: 1 1 70%;
+
+}
+
+.select {
+  margin-bottom: 5px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

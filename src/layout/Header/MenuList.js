@@ -29,7 +29,7 @@ export const DashboardMenu = [
         title: 'Todo',
         icon: <Icons.ListDetails/>,
         badge: <HkBadge bg="success" soft>2</HkBadge>,
-        link: '/apps/todo/tasklist',
+        link: '/apps/todo/task-list',
     },
     {
         id: nanoid(),
