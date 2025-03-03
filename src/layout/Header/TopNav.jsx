@@ -34,13 +34,13 @@ import avatar12 from '@/assets/img/avatar12.jpg';
 const TopNav = () => {
 
     const {states, dispatch} = useGlobalStateContext();
-    const [showDropdown, setShowDropdown] = useState(false);
-    const [searchValue, setSearchValue] = useState("")
+    // const [showDropdown, setShowDropdown] = useState(false);
+    // const [searchValue, setSearchValue] = useState("")
 
-    const CloseSearchInput = () => {
-        setSearchValue("");
-        setShowDropdown(false);
-    }
+    // const CloseSearchInput = () => {
+    //     setSearchValue("");
+    //     setShowDropdown(false);
+    // }
 
     const pageVariants = {
         initial: {
@@ -62,6 +62,13 @@ const TopNav = () => {
         <Navbar expand="xl" className="hk-navbar navbar-light fixed-top">
             <Container fluid>
                 {/* Start Nav */}
+                <Button variant="flush-dark"
+                        onClick={() => dispatch({type: 'sidebar_toggle', sidebarCollapse: !states.sidebarCollapse})}
+                        className="btn-icon btn-rounded flush-soft-hover navbar-toggle d-xl-none">
+                        <span className="icon">
+                            <span className="feather-icon"><AlignLeft/></span>
+                        </span>
+                </Button>
                 <div className="nav-start-wrap">
                     <HeaderNav/>
                 </div>
@@ -69,18 +76,18 @@ const TopNav = () => {
                 {/* End Nav */}
                 <div className="nav-end-wrap">
                     <Nav className="navbar-nav flex-row">
-                        <Nav.Item>
-                            <Button as={Link} variant="flush-dark" href="/apps/email"
-                                    className="btn-icon btn-rounded flush-soft-hover">
-                                <span className="icon">
-                                    <span className=" position-relative">
-                                        <span className="feather-icon"><Inbox/></span>
-                                        <HkBadge bg="primary" soft pill size="sm"
-                                                 className="position-top-end-overflow-1">4</HkBadge>
-                                    </span>
-                                </span>
-                            </Button>
-                        </Nav.Item>
+                        {/*<Nav.Item>*/}
+                        {/*    <Button as={Link} variant="flush-dark" href="/apps/email"*/}
+                        {/*            className="btn-icon btn-rounded flush-soft-hover">*/}
+                        {/*        <span className="icon">*/}
+                        {/*            <span className=" position-relative">*/}
+                        {/*                <span className="feather-icon"><Inbox/></span>*/}
+                        {/*                <HkBadge bg="primary" soft pill size="sm"*/}
+                        {/*                         className="position-top-end-overflow-1">4</HkBadge>*/}
+                        {/*            </span>*/}
+                        {/*        </span>*/}
+                        {/*    </Button>*/}
+                        {/*</Nav.Item>*/}
                         <Nav.Item>
                             <Dropdown className="dropdown-notifications">
                                 <Dropdown.Toggle variant="flush-dark"

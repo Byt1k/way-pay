@@ -175,7 +175,10 @@ Project:	Jampack
       }
     }
 
-    .nav-start-wrap,
+    .nav-start-wrap {
+      display: none;
+    }
+
     .nav-end-wrap {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -212,10 +215,81 @@ Project:	Jampack
   }
 }
 
+@media (min-width: 768px) {
+  .hk-wrapper {
+    .hk-navbar {
+      //.nav-start-wrap {
+      //  display: flex;
+      //  flex: 1 0 auto;
+      //  justify-content: center;
+      //  align-items: center;
+      //  gap: 2rem;
+      //
+      //  .header-nav-icon-wrap {
+      //    margin-right: 0.875rem;
+      //    font-size: 1.5rem;
+      //  }
+      //
+      //  .header-nav-link {
+      //
+      //    .svg-icon {
+      //      svg {
+      //
+      //      }
+      //    }
+      //
+      //    span {
+      //      color: #000;
+      //    }
+      //
+      //    &.active {
+      //      span {
+      //        color: $primary;
+      //      }
+      //    }
+      //  }
+      //}
+    }
+  }
+}
+
 @media (min-width: 992px) {
   .hk-wrapper {
     .hk-navbar {
       @include transition(0.2s ease);
+
+      .nav-start-wrap {
+        display: flex;
+        flex: 1 0 auto;
+        justify-content: center;
+        align-items: center;
+        gap: 2.5rem;
+
+        .header-nav-icon-wrap {
+          margin-right: 0.875rem;
+          font-size: 1.5rem;
+        }
+
+        .header-nav-link {
+
+          .svg-icon {
+            svg {
+
+            }
+          }
+
+          span {
+            color: #000;
+          }
+
+          &.active {
+            span {
+              color: $primary;
+            }
+          }
+        }
+      }
+
     }
   }
 }
@@ -256,29 +330,6 @@ Project:	Jampack
           align-items: center;
         }
       }
-
-      .nav-start-wrap {
-        flex: 1 0 auto;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-
-        .header-nav-link {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-
-          span {
-            color: #000;
-          }
-
-          &.active {
-            span {
-              color: $primary;
-            }
-          }
-        }
-      }
     }
 
     &[data-navbar-style="collapsed"] {
@@ -313,6 +364,7 @@ Project:	Jampack
         }
       }
 
+
       .dropdown-menu {
         position: fixed;
         top: 0;
@@ -326,4 +378,5 @@ Project:	Jampack
       }
     }
   }
+
 }

@@ -47,9 +47,10 @@ const Calculator = () => {
     }, [downPayment, totalSum])
 
     const paymentPerMonth = useMemo(() => {
-        if (!monthCount) return 0
-        return Math.round(totalDebt / Number(monthCount.replace(/\s+/g, '')) / 100) * 100
-    }, [totalDebt, monthCount])
+        if (!monthCount) return 0;
+        const value = totalDebt / Number(monthCount.replace(/\s+/g, ''));
+        return Math.ceil(value / 50) * 50;
+    }, [totalDebt, monthCount]);
 
     const handleMonth = (e: React.ChangeEvent<HTMLSelectElement>) => {
         setSelectedMonth(e.target.value);

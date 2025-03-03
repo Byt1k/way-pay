@@ -22,7 +22,7 @@ const HeaderNav = () => {
                                                                 <span className="svg-icon">
                                                                     {menu.icon}
                                                                 </span>
-                                                            </span>
+                            </span>
                             <span className="header-nav-link-text">{menu.title}</span>
                             {menu.badge && menu.badge}
                         </Link>

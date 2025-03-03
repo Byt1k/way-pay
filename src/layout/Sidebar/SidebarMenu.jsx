@@ -28,15 +28,15 @@ export const SidebarMenu = [
                         grp_name: "apps",
                     },
                     {
-                        name: 'Contact Cards',
+                        name: 'Контроль договоров',
                         path: '/apps/contact/contact-cards',
                         grp_name: "apps",
                     },
-                    {
-                        name: 'Edit Contact',
-                        path: '/apps/contact/edit-contact',
-                        grp_name: "apps",
-                    },
+                    // {
+                    //     name: 'Edit Contact',
+                    //     path: '/apps/contact/edit-contact',
+                    //     grp_name: "apps",
+                    // },
                 ]
             },
 
@@ -76,25 +76,25 @@ export const SidebarMenu = [
                 path: '/apps/invoices/',
                 childrens: [
                     {
-                        name: 'Invoice List',
+                        name: 'Ожидаемые',
                         path: '/apps/invoices/invoice-list',
                         grp_name: "apps",
                     },
                     {
-                        name: 'Invoice Templates',
+                        name: 'Журнал',
                         path: '/apps/invoices/invoice-templates',
                         grp_name: "apps",
                     },
-                    {
-                        name: 'Create Invoice',
-                        path: '/apps/invoices/create-invoice',
-                        grp_name: "apps",
-                    },
-                    {
-                        name: 'Invoice Preview',
-                        path: '/apps/invoices/invoice-preview',
-                        grp_name: "apps",
-                    },
+                    // {
+                    //     name: 'Create Invoice',
+                    //     path: '/apps/invoices/create-invoice',
+                    //     grp_name: "apps",
+                    // },
+                    // {
+                    //     name: 'Invoice Preview',
+                    //     path: '/apps/invoices/invoice-preview',
+                    //     grp_name: "apps",
+                    // },
                 ]
             },
             // {
@@ -138,13 +138,13 @@ export const SidebarMenu = [
             //         },
             //     ]
             // },
-            {
-                id: 'dash_chatpop',
-                name: 'Calendar',
-                icon: <Icons.CalendarTime/>,
-                path: '/apps/calendar',
-                grp_name: "apps",
-            },
+            // {
+            //     id: 'dash_chatpop',
+            //     name: 'Calendar',
+            //     icon: <Icons.CalendarTime/>,
+            //     path: '/apps/calendar',
+            //     grp_name: "apps",
+            // },
             // {
             //     name: 'Email',
             //     icon: <Icons.Inbox/>,
@@ -260,48 +260,48 @@ export const SidebarMenu = [
             //     path: '/apps/gallery',
             //     grp_name: "apps",
             // },
-            {
-                id: "dash_task",
-                name: 'Todo',
-                icon: <Icons.ListDetails/>,
-                path: '/apps/todo/',
-                badge: <HkBadge bg="success" soft className="ms-2">2</HkBadge>,
-                childrens: [
-                    {
-                        name: 'Tasklist',
-                        path: '/apps/todo/task-list',
-                        grp_name: "apps",
-                    },
-                    {
-                        name: 'Gantt',
-                        path: '/apps/todo/gantt',
-                        grp_name: "apps",
-                    },
-                ]
-            },
-            {
-                id: "dash_blog",
-                name: 'Blog',
-                icon: <Icons.Browser/>,
-                path: '/apps/blog/',
-                childrens: [
-                    {
-                        name: 'Posts',
-                        path: '/apps/blog/posts',
-                        grp_name: "apps",
-                    },
-                    {
-                        name: 'Add New Post',
-                        path: '/apps/blog/add-new-post',
-                        grp_name: "apps",
-                    },
-                    {
-                        name: 'Post Detail',
-                        path: '/apps/blog/post-detail',
-                        grp_name: "apps",
-                    },
-                ]
-            },
+            // {
+            //     id: "dash_task",
+            //     name: 'Todo',
+            //     icon: <Icons.ListDetails/>,
+            //     path: '/apps/todo/',
+            //     badge: <HkBadge bg="success" soft className="ms-2">2</HkBadge>,
+            //     childrens: [
+            //         {
+            //             name: 'Tasklist',
+            //             path: '/apps/todo/task-list',
+            //             grp_name: "apps",
+            //         },
+            //         {
+            //             name: 'Gantt',
+            //             path: '/apps/todo/gantt',
+            //             grp_name: "apps",
+            //         },
+            //     ]
+            // },
+            // {
+            //     id: "dash_blog",
+            //     name: 'Blog',
+            //     icon: <Icons.Browser/>,
+            //     path: '/apps/blog/',
+            //     childrens: [
+            //         {
+            //             name: 'Posts',
+            //             path: '/apps/blog/posts',
+            //             grp_name: "apps",
+            //         },
+            //         {
+            //             name: 'Add New Post',
+            //             path: '/apps/blog/add-new-post',
+            //             grp_name: "apps",
+            //         },
+            //         {
+            //             name: 'Post Detail',
+            //             path: '/apps/blog/post-detail',
+            //             grp_name: "apps",
+            //         },
+            //     ]
+            // },
 
             // {
             //     id: "dash_integ",
@@ -397,27 +397,27 @@ export const SidebarMenu = [
             // },
             {
                 id: "dash_profile",
-                name: 'Profile',
+                name: 'Профиль',
                 icon: <Icons.UserSearch/>,
                 path: '/profile/',
                 badgeIndicator: <HkBadge bg="danger" indicator className="position-absolute top-0 start-100"/>,
-                childrens: [
-                    {
-                        name: 'Profile',
-                        path: '/profile',
-                        grp_name: "apps",
-                    },
-                    {
-                        name: 'Edit Profile',
-                        path: '/profile/edit-profile',
-                        grp_name: "apps",
-                    },
-                    {
-                        name: 'Account',
-                        path: '/profile/account',
-                        grp_name: "apps",
-                    },
-                ]
+                // childrens: [
+                //     {
+                //         name: 'Profile',
+                //         path: '/profile',
+                //         grp_name: "apps",
+                //     },
+                //     {
+                //         name: 'Edit Profile',
+                //         path: '/profile/edit-profile',
+                //         grp_name: "apps",
+                //     },
+                //     {
+                //         name: 'Account',
+                //         path: '/profile/account',
+                //         grp_name: "apps",
+                //     },
+                // ]
             },
 
         ]

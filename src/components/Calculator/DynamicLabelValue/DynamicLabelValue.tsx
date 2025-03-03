@@ -10,7 +10,7 @@ const DynamicLabelValue = ({label, value}: DynamicLabelProps) => {
     return (
         <div>
             <h3 className={s.label}>{label}</h3>
-            <div>{value}</div>
+            <div className={s.value}>{value}</div>
         </div>
     );
 };

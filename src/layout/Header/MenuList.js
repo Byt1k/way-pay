@@ -28,7 +28,7 @@ export const DashboardMenu = [
         id: nanoid(),
         title: 'Todo',
         icon: <Icons.ListDetails/>,
-        badge: <HkBadge bg="success" soft>2</HkBadge>,
+        badge: <HkBadge className="ms-2" bg="success" soft>2</HkBadge>,
         link: '/apps/todo/task-list',
     },
     {
