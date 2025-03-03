@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Accordion, AccordionContext, Badge, Button, Card, ListGroup, Nav, useAccordionButton } from 'react-bootstrap';
+import { Accordion, AccordionContext, Button, Card, ListGroup, Nav, useAccordionButton } from 'react-bootstrap';
 import SimpleBar from 'simplebar-react';
 import SidebarHeader from '../SidebarHeader';
 import classNames from 'classnames';
@@ -14,7 +14,7 @@ const VerticalNav = () => {
     const pathname = usePathname();
 
     // 1st collapse menu like chat*
-    const CustomToggle = ({ children, eventKey, links, parentPath }) => {
+    const CustomToggle = ({ children, eventKey, parentPath }) => {
         const { activeEventKey } = useContext(AccordionContext);
         const handleAccordion = useAccordionButton(eventKey, () =>
             console.log('totally custom!')

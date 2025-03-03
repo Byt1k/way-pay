@@ -16,7 +16,7 @@ import avatar10 from '@/assets/img/avatar10.jpg';
 import avatar13 from '@/assets/img/avatar13.jpg';
 
 //Custom Star Formatter
-const starFormatter = (cell) => (
+export const starFormatter = (cell) => (
     <div className="d-flex align-items-center">
         <span className={classNames("contact-star", { "marked": cell })}>
             <span className="feather-icon">
@@ -47,7 +47,7 @@ const nameFormater = (cell) => {
 }
 
 //Custom Mail Formatter
-const mailFormatter = (mail) => (
+export const mailFormatter = (mail) => (
     <span className="text-truncate mw-150p d-block">{mail}</span>
 )
 

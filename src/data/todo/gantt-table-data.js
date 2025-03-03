@@ -11,7 +11,7 @@ import avatar10 from '@/assets/img/avatar10.jpg';
 import avatar15 from '@/assets/img/avatar15.jpg';
 
 
-const taskFormater = (cell) => {
+export const taskFormater = (cell) => {
     return (
         cell.map((data, indx) => (
             <div className="d-flex align-items-center gt-single-task" key={indx}>
@@ -125,7 +125,7 @@ export const columns = [
         title: "Assignee",
         sort: true,
         cellFormatter: avatarFormater,
-        sortValue: (cell, row) => (cell.map((data) => (data.userName))),
+        sortValue: (cell) => (cell.map((data) => (data.userName))),
     },
     {
         accessor: "due_date",

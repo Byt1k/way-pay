@@ -6,7 +6,7 @@ import DragDropCards from './DragDropCards';
 import { nanoid } from 'nanoid';
 
 const Board = () => {
-    // eslint-disable-next-line no-unused-vars
+     
     const [dataset, setDataset] = useState(DATASET);
 
     const [tasks, setTasks] = useState(dataset.tasks);

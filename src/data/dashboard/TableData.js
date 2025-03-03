@@ -1,7 +1,6 @@
 import { Edit2, Trash } from 'react-feather';
 import HkBadge from "@/components/@hk-badge/@hk-badge";
 import { Button, ProgressBar } from "react-bootstrap";
-import { ArrowsSort, SortAscending, SortDescending } from 'tabler-icons-react';
 
 //Images
 import avatar1 from '@/assets/img/logo-avatar-1.png';

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Archive, Edit, Trash2 } from 'react-feather';
-import { ArrowsSort, SortAscending, SortDescending } from 'tabler-icons-react';
 import { Button, ButtonGroup, Dropdown } from 'react-bootstrap';
 import HkBadge from '@/components/@hk-badge/@hk-badge';
 
@@ -99,7 +98,7 @@ export const columns = [
         title: "Reciplent",
         sort: true,
         cellFormatter: reciplentFormatter,
-        sortValue: (cell, row) => (cell.map((data) => (data.title))),
+        sortValue: (cell) => (cell.map((data) => (data.title))),
     },
     {
         accessor: "status",

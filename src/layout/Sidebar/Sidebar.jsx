@@ -1,6 +1,5 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 import React, { useEffect, useState } from 'react';
-import { Button, Card, Nav, NavLink } from 'react-bootstrap';
+import { Button, Card, Nav } from 'react-bootstrap';
 import SimpleBar from 'simplebar-react';
 import SidebarHeader from './SidebarHeader';
 import { SidebarMenu } from './SidebarMenu';

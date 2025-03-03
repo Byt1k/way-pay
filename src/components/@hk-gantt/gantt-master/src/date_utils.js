@@ -6,7 +6,7 @@ const MINUTE = 'minute';
 const SECOND = 'second';
 const MILLISECOND = 'millisecond';
 
-export default {
+const dateUtils = {
     parse(date, date_separator = '-', time_separator = /[.:]/) {
         if (date instanceof Date) {
             return date;
@@ -61,13 +61,13 @@ export default {
 
     format(date, format_string = 'YYYY-MM-DD HH:mm:ss.SSS', lang = 'en') {
         const dateTimeFormat = new Intl.DateTimeFormat(lang, {
-            month: 'long'
+            month: 'long',
         });
         const month_name = dateTimeFormat.format(date);
         const month_name_capitalized =
             month_name.charAt(0).toUpperCase() + month_name.slice(1);
 
-        const values = this.get_date_values(date).map(d => padStart(d, 2, 0));
+        const values = this.get_date_values(date).map((d) => padStart(d, 2, 0));
         const format_map = {
             YYYY: values[0],
             MM: padStart(+values[1] + 1, 2, 0),
@@ -124,7 +124,7 @@ export default {
                 days,
                 months,
                 years,
-            }[scale]
+            }[scale],
         );
     },
 
@@ -213,6 +213,8 @@ export default {
         return 28;
     },
 };
+
+export default dateUtils;
 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padStart
 function padStart(str, targetLength, padString) {

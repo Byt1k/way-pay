@@ -15,6 +15,7 @@ const dev = {
         }),
     ],
 };
+
 const prod = {
     input: 'src/index.js',
     output: {
@@ -34,4 +35,6 @@ const prod = {
     ],
 };
 
-export default [dev, prod];
+const rollupConfigs = [dev, prod];
+
+export default rollupConfigs;

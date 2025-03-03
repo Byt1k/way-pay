@@ -9,7 +9,7 @@ import jampackImg from '@/assets/img/Jampack.svg';
 
 
 const SidebarHeader = () => {
-    const { states, dispatch } = useGlobalStateContext();
+    const { dispatch } = useGlobalStateContext();
 
     const toggleSidebar = () => {
         dispatch({ type: 'sidebar_toggle' });
