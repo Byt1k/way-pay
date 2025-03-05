@@ -1,11 +1,10 @@
-'use client'
+'use client';
 import React, {useCallback, useMemo, useState} from 'react';
 import NumberInput from "@/components/ui/NumberInput/NumberInput";
 import DynamicLabelValue from "@/components/Calculator/DynamicLabelValue/DynamicLabelValue";
 import {Form} from "react-bootstrap";
 //module styles
-import s from './Calculator.module.scss'
-
+import s from './Calculator.module.scss';
 
 const months = [
     {value: "1", label: 'Январь'},
@@ -30,46 +29,50 @@ const Calculator = () => {
     const [roundUp, setRoundUp] = useState('50');
     const [selectedMonth, setSelectedMonth] = useState('');
     const [selectedYear, setSelectedYear] = useState('');
-    const currentYear = new Date().getFullYear()
+    const currentYear = new Date().getFullYear();
 
     const totalSum = useMemo(() => {
-        if (!sum || !allowance) return {totalSum: 0, allowanceCount: 0}
-        const allowanceCount = Number(sum.replace(/\s+/g, '')) * Number(allowance.replace(/\s+/g, '')) / 100;
+        if (!sum || !allowance) return {totalSum: 0, allowanceCount: 0};
+        const sumValue = Number(sum.replace(/\s+/g, ''));
+        const allowanceCount = sumValue * Number(allowance.replace(/\s+/g, '')) / 100;
         return {
-            totalSum: allowanceCount + Number(sum.replace(/\s+/g, '')),
+            totalSum: sumValue + allowanceCount,
             allowanceCount,
-        }
+        };
+    }, [sum, allowance]);
 
-    }, [sum, allowance])
-
-    const totalDebt = useMemo(() => {
-        return Number(totalSum.totalSum) - Number(downPayment.replace(/\s+/g, ''));
-    }, [downPayment, totalSum])
+    const debt = useMemo(() => {
+        return totalSum.totalSum - Number(downPayment.replace(/\s+/g, ''));
+    }, [downPayment, totalSum]);
 
     const paymentPerMonth = useMemo(() => {
         if (!monthCount) return 0;
-        const value = totalDebt / Number(monthCount.replace(/\s+/g, ''));
+        const value = debt / Number(monthCount.replace(/\s+/g, ''));
         return Math.ceil(value / 50) * 50;
-    }, [totalDebt, monthCount]);
+    }, [debt, monthCount]);
 
-    const handleMonth = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const totalDebt = useMemo(() => {
+        return paymentPerMonth * Number(monthCount.replace(/\s+/g, ''));
+    }, [paymentPerMonth, monthCount]);
+
+    const handleMonth = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
         setSelectedMonth(e.target.value);
-    };
+    }, []);
 
-    const handleYear = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const handleYear = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
         setSelectedYear(e.target.value);
-    };
+    }, []);
 
     const calculateLastMonth = useCallback(() => {
-        if (!selectedMonth || !selectedYear) return ''
-        const startMonthIndex = Number(selectedMonth) - 1; // Индекс месяца в массиве
-        const totalMonths = startMonthIndex + (Number(monthCount.replace(/\s+/g, '')) / 100) * 100; // Общее количество месяцев
-        const years = Math.floor(totalMonths / 12); // Количество лет
-        const lastMonthIndex = totalMonths % 12; // Индекс последнего месяца
+        if (!selectedMonth || !selectedYear) return '';
+        const startMonthIndex = Number(selectedMonth) - 1;
+        const totalMonths = Number(monthCount.replace(/\s+/g, ''));
+        const years = Math.floor((startMonthIndex + totalMonths) / 12);
+        const lastMonthIndex = (startMonthIndex + totalMonths) % 12;
         const lastYear = Number(selectedYear) + years;
         const lastMonthLabel = lastMonthIndex === 0 ? months[11]?.label : months[lastMonthIndex - 1]?.label;
-        return `${lastMonthLabel} ${lastYear}`
-    }, [selectedMonth, selectedYear, monthCount])
+        return `${lastMonthLabel} ${lastYear}`;
+    }, [selectedMonth, selectedYear, monthCount]);
 
     return (
         <div className={s.calculator}>
@@ -113,7 +116,6 @@ const Calculator = () => {
                 </div>
 
             </div>
-
 
         </div>
     );
