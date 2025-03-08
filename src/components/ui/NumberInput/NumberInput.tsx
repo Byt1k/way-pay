@@ -15,7 +15,7 @@ const NumberInput = ({label, placeholder, value, onChange}: NumberInputPropsType
 
     // const [value, setValue] = useState('');
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         let inputValue = e.target.value.replace(/\D/g, ''); // Удалить все нечисловые символы
 
         // Проверка на начало с нуля

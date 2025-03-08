@@ -1,5 +1,5 @@
 'use client';
-import React, {useCallback, useMemo, useState} from 'react';
+import React, {ChangeEvent, useCallback, useEffect, useMemo, useState} from 'react';
 import NumberInput from "@/components/ui/NumberInput/NumberInput";
 import DynamicLabelValue from "@/components/Calculator/DynamicLabelValue/DynamicLabelValue";
 import {Form} from "react-bootstrap";
@@ -28,8 +28,28 @@ const Calculator = () => {
     const [downPayment, setDownPayment] = useState('');
     const [roundUp, setRoundUp] = useState('50');
     const [selectedMonth, setSelectedMonth] = useState('');
-    const [selectedYear, setSelectedYear] = useState('');
     const currentYear = new Date().getFullYear();
+    const [selectedYear, setSelectedYear] = useState('');
+
+    // Вычисляем даты по умолчанию
+    const getDefaultDates = () => {
+        const today = new Date();
+        const nextMonthDate = new Date(today.getFullYear(), today.getMonth() + 1, 1);
+        return {
+            defaultMonth: (nextMonthDate.getMonth() + 1).toString(), // +1 т.к. месяцы 0-11
+            defaultYear: nextMonthDate.getFullYear().toString()
+        };
+    };
+
+    useEffect(() => {
+        const {defaultMonth, defaultYear} = getDefaultDates();
+        setSelectedMonth(defaultMonth);
+        setSelectedYear(defaultYear);
+        const ls = localStorage.getItem(process.env.REACT_APP_ROUND_UP || 'roundUp')
+        if (ls) {
+            setRoundUp(ls)
+        }
+    }, []);
 
     const totalSum = useMemo(() => {
         if (!sum || !allowance) return {totalSum: 0, allowanceCount: 0};
@@ -48,8 +68,8 @@ const Calculator = () => {
     const paymentPerMonth = useMemo(() => {
         if (!monthCount) return 0;
         const value = debt / Number(monthCount.replace(/\s+/g, ''));
-        return Math.ceil(value / 50) * 50;
-    }, [debt, monthCount]);
+        return Math.ceil(value / Number(roundUp.replace(/\s+/g, ''))) * Number(roundUp.replace(/\s+/g, ''));
+    }, [debt, monthCount, roundUp]);
 
     const totalDebt = useMemo(() => {
         return paymentPerMonth * Number(monthCount.replace(/\s+/g, ''));
@@ -64,7 +84,7 @@ const Calculator = () => {
     }, []);
 
     const calculateLastMonth = useCallback(() => {
-        if (!selectedMonth || !selectedYear) return '';
+        if (!selectedMonth || !selectedYear || !monthCount) return '';
         const startMonthIndex = Number(selectedMonth) - 1;
         const totalMonths = Number(monthCount.replace(/\s+/g, ''));
         const years = Math.floor((startMonthIndex + totalMonths) / 12);
@@ -74,25 +94,30 @@ const Calculator = () => {
         return `${lastMonthLabel} ${lastYear}`;
     }, [selectedMonth, selectedYear, monthCount]);
 
+    const onChangeRoundUp = (value: string) => {
+        localStorage.setItem(process.env.REACT_APP_ROUND_UP || 'roundUp', value);
+        setRoundUp(value);
+    }
+
     return (
         <div className={s.calculator}>
             <h2 className={s.title}>Калькулятор</h2>
             <div className={s.container}>
                 <div className={s.calculatorWrapper}>
                     <h3 className={s.subtitle}>Параметры рассрочки</h3>
-                    <NumberInput value={sum} onChange={setSum} label={"Сумма рассрочки, руб.:"} placeholder={'100000'}/>
+                    <NumberInput value={sum} onChange={setSum} label={"Сумма рассрочки, руб.:"}/>
                     <NumberInput value={monthCount} onChange={setMonthCount} label={"Количество месяцев:"}
-                                 placeholder={'12'}/>
-                    <NumberInput value={allowance} onChange={setAllowance} label={"Надбавка, %:"} placeholder={'20'}/>
+                    />
+                    <NumberInput value={allowance} onChange={setAllowance} label={"Надбавка, %:"}/>
                     <NumberInput value={downPayment} onChange={setDownPayment} label={"Первоначальный взнос, руб:"}
-                                 placeholder={'10000'}/>
-                    <NumberInput value={roundUp} onChange={() => {
-                    }} label={"Округлять до, руб:"}/>
+                    />
+                    <NumberInput value={roundUp} onChange={onChangeRoundUp}
+                                 label={"Округлять до, руб:"}/>
 
                     <div className={s.selectWrapper}>
                         <span>Начало выплат:</span>
                         <Form.Select className={`me-3 ${s.select}`} value={selectedMonth} onChange={handleMonth}>
-                            <option value="">Выберите месяц</option>
+                            {/*<option value="">Выберите месяц</option>*/}
                             {months.map((month) => (
                                 <option key={month.value} value={month.value}>
                                     {month.label}
@@ -100,7 +125,7 @@ const Calculator = () => {
                             ))}
                         </Form.Select>
                         <Form.Select className={`me-3 ${s.select}`} value={selectedYear} onChange={handleYear}>
-                            <option value="">Выберите год</option>
+                            {/*<option value="">Выберите год</option>*/}
                             <option value={currentYear}>{currentYear}</option>
                             <option value={currentYear + 1}>{currentYear + 1}</option>
                         </Form.Select>

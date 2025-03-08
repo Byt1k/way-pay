@@ -12,8 +12,13 @@
 
 .container {
   display: flex;
-  gap: 10rem;
+  flex-direction: column;
+  gap: 1rem;
   padding: 20px 0;
+  @media screen and (min-width: 993px) {
+    gap: 10rem;
+    flex-direction: row;
+  }
 }
 
 h3.subtitle {
@@ -22,7 +27,6 @@ h3.subtitle {
 }
 
 .calculatorWrapper {
-  padding: 0 20px;
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
@@ -32,7 +36,9 @@ h3.subtitle {
 
 .resultInfoWrapper {
   flex: 1 1 70%;
-
+  border-radius: 10px;
+  background-color: rgba(239, 239, 239, 0.66);
+  padding: 15px;
 }
 
 .select {

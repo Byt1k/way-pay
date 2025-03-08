@@ -203,6 +203,7 @@ Project:	Jampack
 
         .navbar-brand {
           .brand-img {
+
             &:last-child {
               //margin-left: 0.5rem;
             }
@@ -353,6 +354,12 @@ Project:	Jampack
 
         // added for hide toggle button in react version
         .menu-header {
+          .navbar-brand {
+            .brand-img {
+              margin-right: 10px;
+            }
+          }
+
           .navbar-toggle {
             filter: blur(100px);
           }
